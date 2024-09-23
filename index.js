@@ -35,15 +35,24 @@ document.getElementById('noakhaliDonationButton').addEventListener('click', func
         initialAmount=parseFloat(initialAmount);
         
         const remaining=initialAmount-donatedAmount;
-        document.getElementById('initial-amount').innerText=remaining;
-        document.getElementById('donated-amount-noahkhali').innerText=FinalAmount;
 
-        my_modal_1.showModal();
+        if(remaining<0){
+            alert('Insufficient Balance');
+        }
+          
+        else{
 
-        const name= document.getElementById('name').innerText;
-
-        historyMaker(donatedAmount,name);
-
+            document.getElementById('initial-amount').innerText=remaining;
+            document.getElementById('donated-amount-noahkhali').innerText=FinalAmount;
+    
+            my_modal_1.showModal();
+    
+            const name= document.getElementById('name').innerText;
+    
+            historyMaker(donatedAmount,name);
+    
+        }
+       
     }
 
     else{
@@ -62,6 +71,11 @@ document.getElementById('feni').addEventListener('click', function(){
         initialAmount=parseFloat(initialAmount);
         
         const remaining=initialAmount-donatedAmount;
+
+        if(remaining<0){
+            alert('Insufficient Balance');
+        }
+       else{
         document.getElementById('initial-amount').innerText=remaining;
         document.getElementById('feniFund').innerText=FinalAmount;
 
@@ -71,6 +85,7 @@ document.getElementById('feni').addEventListener('click', function(){
 
         historyMaker(donatedAmount,name);
 
+       }
     }
 
     else{
@@ -90,6 +105,11 @@ document.getElementById('movement').addEventListener('click', function(){
         initialAmount=parseFloat(initialAmount);
         
         const remaining=initialAmount-donatedAmount;
+        if(remaining<0){
+            alert('Insufficient Balance');
+        }
+
+       else{
         document.getElementById('initial-amount').innerText=remaining;
         document.getElementById('donated-amount-quota-movement').innerText=FinalAmount;
 
@@ -98,6 +118,7 @@ document.getElementById('movement').addEventListener('click', function(){
         const name= document.getElementById('name-3').innerText;
 
         historyMaker(donatedAmount,name);
+       }
 
     }
 
